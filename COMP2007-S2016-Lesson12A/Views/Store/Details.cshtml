@@ -1,0 +1,21 @@
+﻿@using COMP2007_S2016_Lesson12A.Models
+@model Album
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Album: @Model.Title</h2>
+<hr />
+<ul>
+    <li>Genre: @Model.Genre.Name </li>
+    <li>Artist: @Model.Artist.Name </li>
+    <li>Price: @Model.Price </li>
+    <li>
+        Album Art:
+        <img src="@Model.AlbumArtUrl" alt="@Model.Title" />
+        
+    </li>
+</ul>
+<a href="@Url.Action("Edit","StoreManager", new { id = Model.AlbumId })" class="btn btn-default"><i class="fa fa-pencil"></i> Edit</a>
+
